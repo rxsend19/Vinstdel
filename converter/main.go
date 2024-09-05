@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strings"
@@ -8,8 +9,15 @@ import (
 
 var content string
 
+func isJSON(s string) bool {
+	var j map[string]interface{}
+	if err := json.Unmarshal([]byte(s), &j); err != nil {
+		fmt.Println(err.Error())
+		return false
+	}
+	return true
+}
 func main() {
-	// read file
 	raw, err := os.ReadFile("../script.ps1")
 	if err != nil {
 		fmt.Println(err)
@@ -22,5 +30,11 @@ func main() {
 		content = content + d
 	}
 
-	fmt.Println("{\"command\":\"" + content + "\"}")
+	jsonraw := "{\"command\":\"" + content + "\"}"
+	if isJSON(jsonraw) {
+		fmt.Println(jsonraw)
+	} else {
+		fmt.Println("JSON NOT VALID")
+	}
+
 }
