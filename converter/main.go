@@ -30,8 +30,8 @@ func main() {
 		content = content + d
 	}
 
-	jsonraw := "{\"command\":\"" + content + "\"}"
-	if isJSON(jsonraw) {
+	jsonraw := "\"command\":\"" + content + "\""
+	if isJSON("{"+jsonraw+"}") {
 		fmt.Println(jsonraw)
 	} else {
 		fmt.Println("JSON NOT VALID")
