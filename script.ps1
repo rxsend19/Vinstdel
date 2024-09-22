@@ -27,3 +27,6 @@ foreach ($ext in  $problem_arr) {
     Write-Host 'Re-delete:$ext'; 
     code  --uninstall-extension $ext;
 }
+
+
+# TODO : автоматически выделять аддоны в extensions.json ( если те имеются в code.workspace )

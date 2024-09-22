@@ -18,6 +18,8 @@ func isJSON(s string) bool {
 	return true
 }
 func main() {
+
+
 	raw, err := os.ReadFile("../script.ps1")
 	if err != nil {
 		fmt.Println(err)

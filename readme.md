@@ -1,8 +1,11 @@
 # костыль!! (для vscode)
+
 Удаляет все плагины  которых нет в extensions/recommendations  и устанавливает недостающие  
 
-## установка 
-1 скопипастить в .code-workspace file 
+## установка
+
+1 скопипастить в .code-workspace file
+
 ```json
 "tasks": {
         "version": "2.0.0",
@@ -26,8 +29,7 @@
 
 ```
 
-
-2 добавить плагины  в .code-workspace file 
+2 добавить плагины  в .code-workspace file
 
 ```json
 
